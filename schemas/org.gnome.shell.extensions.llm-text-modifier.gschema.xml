@@ -30,6 +30,12 @@
       <summary>Improve Text Hotkey</summary>
     </key>
 
+    <key name="show-panel-icon" type="b">
+      <default>true</default>
+      <summary>Show panel icon</summary>
+      <description>Whether to show the extension icon in the GNOME top bar.</description>
+    </key>
+
     <key name="prompt-fix-grammar" type="s">
       <default>'You are a grammar correction tool. Correct the following text. Return *only* the corrected text, with no explanation, preamble, or markdown formatting.'</default>
       <summary>System prompt for fixing grammar</summary>

@@ -2,9 +2,11 @@
 
 [![GNOME Shell Version](https://img.shields.io/badge/GNOME-45%2C%2046-blue.svg)](https://www.gnome.org)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-A GNOME Shell extension that uses a local, OpenAI-compatible LLM to fix grammar or improve text in your clipboard with a simple hotkey.
+A GNOME Shell extension that uses an OpenAI-compatible LLM to fix grammar or improve text from your clipboard or selected text with a simple hotkey or panel menu.
 
-**Privacy-first:** All API calls are made directly to your local server. No data ever leaves your machine.
+Tested against the GNOME Shell 45-49 extension API surface used by this project.
+
+**Privacy-first when used locally:** All API calls are made directly to the endpoint you configure. If you use a local server, no data leaves your machine. If you use a cloud provider, your text is sent to that provider.
 
 
 
@@ -12,14 +14,16 @@ A GNOME Shell extension that uses a local, OpenAI-compatible LLM to fix grammar 
 
 ## Features
 
-* **Fix Grammar:** Select text and press a hotkey to correct grammar.
-* **Improve Text:** Select text and press a hotkey to improve clarity, flow, and impact.
+* **Fix Grammar:** Process clipboard text with a hotkey or use the panel menu to act on selected text first.
+* **Improve Text:** Improve clipboard text with a hotkey or use the panel menu to act on selected text first.
+* **Panel Menu Actions:** Use the top-bar menu for mouse-driven Fix and Improve actions.
 * **Local & Cloud LLM Support:** Works with any OpenAI-compatible API endpoint, including local servers (LM Studio, Ollama) and cloud providers (OpenAI, Groq, etc.).
 * **Privacy-Focused:** Ideal for use with local-first tools like **LM Studio**, **Ollama**, or **vLLM**.
 * **Highly Configurable:**
     * Set your custom API endpoint and model name.
     * **API Key Support:** Add an API key if your endpoint requires authentication.
     * Customize the hotkeys for both actions.
+    * Show or hide the GNOME top-bar panel icon.
     * Modify the system prompts to fine-tune the AI's behavior.
 
 ---
@@ -67,9 +71,9 @@ If you want to install the latest development version:
 
 ## 🚀 Configuration
 
-After installing, you **must** configure the extension to point to your local LLM.
+After installing, you **must** configure the extension to point to your chosen LLM endpoint.
 
-1.  Start your local LLM server (e.g., in LM Studio, load your model and click "Start Server").
+1.  Start your local LLM server, or choose a cloud provider endpoint.
 2.  Open the "Extensions" application (or run `gnome-extensions prefs llm-text-modifier@rishabhbajpai24.com`).
 3.  Click the **gear icon** ⚙️ next to "LLM Text Modifier".
 4.  Set the **API Endpoint**.
@@ -80,7 +84,7 @@ After installing, you **must** configure the extension to point to your local LL
 6.  **Set the API Key (Optional)**
     * If your endpoint requires an API key (e.g. OpenAI, Groq), enter it here.
     * For local servers like LM Studio, you can leave the default "random" value.
-7.  (Optional) Change the hotkeys or system prompts to your liking.
+7.  (Optional) Change the hotkeys, show or hide the panel icon, or customize the system prompts.
 
 ## ⌨️ Usage
 
@@ -93,6 +97,14 @@ After installing, you **must** configure the extension to point to your local LL
 1.  Copy any text to your clipboard.
 2.  Press the "Improve Text" hotkey (Default: `Ctrl`+`Win`+`P`).
 3.  Wait for the notification. The improved text is now in your clipboard.
+
+### Panel Menu Workflow
+
+1.  Select text in an application.
+2.  Click the extension icon in the GNOME top bar.
+3.  Choose **Improve Selection or Clipboard** or **Fix Selection or Clipboard**.
+4.  The extension tries the primary selection first, then falls back to the regular clipboard.
+5.  The result is copied to both the clipboard and primary selection for easy pasting.
 
 ## 🤝 Contributing
 

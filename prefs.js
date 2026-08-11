@@ -63,6 +63,12 @@ export default class LLMTextPreferences extends ExtensionPreferences {
             'hotkey-improve',
             settings
         ));
+        hotkeyGroup.add(this._createSwitchRow(
+            'Show Panel Icon',
+            'Display the extension icon in the GNOME top bar for mouse-driven actions.',
+            'show-panel-icon',
+            settings
+        ));
 
         // --- NEW: Prompt Settings Group ---
         const promptGroup = new Adw.PreferencesGroup({
@@ -105,6 +111,20 @@ export default class LLMTextPreferences extends ExtensionPreferences {
 
         row.add_suffix(entry);
         row.set_activatable_widget(entry);
+        return row;
+    }
+
+    _createSwitchRow(title, subtitle, settingsKey, settings) {
+        const row = new Adw.SwitchRow({
+            title: title,
+            subtitle: subtitle,
+            active: settings.get_boolean(settingsKey),
+        });
+
+        row.connect('notify::active', switchRow => {
+            settings.set_boolean(settingsKey, switchRow.get_active());
+        });
+
         return row;
     }
 
