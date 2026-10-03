@@ -49,7 +49,7 @@ export default class LLMTextPreferences extends ExtensionPreferences {
         // --- Hotkey Settings Group ---
         const hotkeyGroup = new Adw.PreferencesGroup({
             title: 'Hotkey Configuration',
-            description: 'Set your custom hotkeys. Use formats like <Control><Super>o',
+            description: 'Set your custom hotkeys. Use formats like &lt;Control&gt;&lt;Super&gt;o',
         });
         page.add(hotkeyGroup);
 
