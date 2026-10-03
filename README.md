@@ -1,6 +1,6 @@
 # LLM Text Modifier (GNOME Shell Extension)
 
-[![GNOME Shell Version](https://img.shields.io/badge/GNOME-45%2C%2046-blue.svg)](https://www.gnome.org)
+[![GNOME Shell Version](https://img.shields.io/badge/GNOME-45--50-blue.svg)](https://www.gnome.org)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 A GNOME Shell extension that uses a local, OpenAI-compatible LLM to fix grammar or improve text in your clipboard with a simple hotkey.
 
