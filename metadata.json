@@ -11,7 +11,7 @@
     "49",
     "50"
   ],
-  "url": "https://github.com/Rishabh-Bajpai/gnome-shell-llm-text-modifier",
+  "url": "https://github.com/samosa-ai-com/gnome-shell-llm-text-modifier",
   "settings-schema": "org.gnome.shell.extensions.llm-text-modifier",
   "gettext-domain": "llm-text-modifier",
   "donations": {
